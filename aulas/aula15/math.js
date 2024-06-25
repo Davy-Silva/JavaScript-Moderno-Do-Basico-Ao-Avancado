@@ -19,3 +19,5 @@ console.log(Math.PI) // Número de PI
 
 num1 = 9
 console.log(num1 ** (1/2)) // Calculo para descobrir a raiz quadrada
+
+console.log(100 / 0) // Quando um número é MUITO grande o JS retorna Infinity
