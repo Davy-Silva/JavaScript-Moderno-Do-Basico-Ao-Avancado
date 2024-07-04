@@ -21,7 +21,7 @@ console.log(array) // Consigo alterar o index, é Mutável
 
 a = [1, 2, 3]
 b = a // Referência de a, mesmo valor
-// b = [...a] <- Operador par cópiar forçado, valor de b se torna uma cópia independente, igual um dado primitivo
+// b = [...a] <- Operador para cópiar forçado, valor de b se torna uma cópia independente, igual um dado primitivo
 console.log(a, b)
 
 a.push(4) // Alterar a também altera b (apontam o mesmo local na memoria)
