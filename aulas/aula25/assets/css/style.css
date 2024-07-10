@@ -79,9 +79,8 @@ form button
 form button:hover
 {   background-color: var(--primary-color-dark); }
 
-#resultado
+#p-id
 {
-    background-color: rgb(9, 245, 5);
     text-align: center;
     padding: 5px;
     border-radius: 5px;
@@ -89,3 +88,8 @@ form button:hover
     color: white;
     text-shadow: 1px 1px black;
 }
+.verdadeiro
+{   background-color: rgb(8, 255, 8); }
+.falso
+{   background-color: red; }
+
