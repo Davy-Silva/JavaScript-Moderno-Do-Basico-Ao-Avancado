@@ -1,3 +1,5 @@
+// Feito soznho
+
 const h1 = document.querySelector("#h1")
 const data = new Date()
 const diaSemana = diaSemanaText(data.getDay())
@@ -11,13 +13,13 @@ function diaSemanaText(dia)
 {
     switch(dia)
     {
-        case 0: return "Domingo-feira"
+        case 0: return "Domingo"
         case 1: return "Segunda-feira"
         case 2: return "Terça-feira"
         case 3: return "Quarta-feira"
         case 4: return "Quinta-feira"
         case 5: return "Sexta-feira"
-        case 6: return "Sábado-feira"
+        case 6: return "Sábado"
     }
 }
 
