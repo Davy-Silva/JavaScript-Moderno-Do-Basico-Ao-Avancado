@@ -8,14 +8,14 @@ const data2 = new Date(2020, 3, 20, 15, 14, 27, 500) // Ano, Mês, Dia, Hora, Mi
 console.log(data2)
 
 // Exibindo valores separados
-console.log("Dia", data2.getDate())
+console.log("Data", data2.getDate())
 console.log("Mês", data2.getMonth() + 1) // Mês em JS começa no 0
 console.log("Ano", data2.getFullYear())
 console.log("Hora", data2.getHours())
 console.log("Min", data2.getMinutes())
 console.log("Seg", data2.getSeconds())
 console.log("Ms", data2.getMilliseconds())
-console.log("Dia Semana", data2.getDay())
+console.log("Dia", data2.getDay())
 
 // Deixando data no padrão Br
 function formataData(data)
