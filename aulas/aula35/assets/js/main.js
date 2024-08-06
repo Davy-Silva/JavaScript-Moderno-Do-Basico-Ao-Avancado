@@ -7,30 +7,9 @@ const elementos =
 ]
 
 const container = document.querySelector("#container")
+const div = document.createElement("div")
 
-container.appendChild(criaDiv())
-
-function criaDiv()
+for(let i = 0; i < elementos.length; i++)
 {
-    criaElements("div")
+    console.log(elementos[i])
 }
-
-function criaElements(element)
-{
-    const div = document.createElement(element)
-    return div
-}
-
-function child(element, texto)
-{
-    element.appendChild(texto)
-}
-
-function enviaMsg(msg)
-{
-    const div = document.querySelector("#container > div")
-    div.innerHTML = (msg)
-}
-
-
-container.innerHTML += `${elementos[0].texto}`
