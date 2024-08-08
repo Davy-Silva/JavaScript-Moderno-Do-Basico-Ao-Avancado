@@ -1,4 +1,3 @@
-
 let a = "A" // B
 let b = "B" // C
 let c = "C" // A
@@ -24,3 +23,12 @@ const [list1, list2, list3] = numeros2 // Facilitando com Desestruturação
 
 console.log(numeros2[1][2]) // [Index do Array][Index do Número]
 console.log(list2[2]) // Facilitando
+
+const aA = {
+    nomeee: "Davy",
+    idadeee: 16
+}
+
+const {idadeee, nomeee} = aA
+
+console.log(nomeee, idadeee)
