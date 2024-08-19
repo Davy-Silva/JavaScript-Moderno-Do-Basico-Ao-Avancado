@@ -2,8 +2,8 @@ let a = "A" // B
 let b = "B" // C
 let c = "C" // A
 
-let letras = [b, c, a]; // Cria o array 'numero' com os valores de 'b', 'c' e 'a' respectivamente
-[a, b, c] = letras // Desestruturação: atribui os valores do array 'numero' a 'a', 'b' e 'c'
+let letras = [b, c, a]; // Cria o array 'letra' com os valores de 'b', 'c' e 'a' respectivamente
+[a, b, c] = letras // Desestruturação: atribui os valores do array 'letra' a 'a', 'b' e 'c'
 
 console.log(a, b, c) // Exibe os valores desestruturados de 'a', 'b' e 'c'
 
