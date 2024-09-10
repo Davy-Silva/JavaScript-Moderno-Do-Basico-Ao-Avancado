@@ -45,16 +45,20 @@ while ( numero < numeros.length )
     numero++
 }
 
+console.log( '----------------------------' )
+
+let numero2 = 0
+
 do
 {
-    if ( numero === 7 )
+    if ( numero2 === 7 )
     {
         console.log( 'Número 7 Encontrado, saindo...' )
         break // Quebra o laço, não executa o resto
     }
 
-    console.log( numero )
+    console.log( numero2 )
 
-    numero++
+    numero2++
 
-} while ( numero < numeros.length )
+} while ( numero2 < numeros.length )

@@ -46,7 +46,7 @@ try
 catch( e )
 {
     // Tratar erro
-    // console.log( e )
+    console.log( e )
 }
 finally
 {

@@ -6,7 +6,7 @@ while( i <= 10 ) // Checa a condição e depois executa o laço. (While = Enquan
     i++ // Se não usar incremento cria um laço infinito. i nunca chega a 10.
 }
 
-console.log('-------------------------------')
+console.log('-------------------------------') 
 
 let i2 = 0
 const nome = 'Davy'
