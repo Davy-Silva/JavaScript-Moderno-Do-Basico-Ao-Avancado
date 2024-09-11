@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <div id="timer">10</div>
+
+    <script>
+        let timeLeft = 10;  // Define o tempo inicial (em segundos)
+        const timerDisplay = document.getElementById('timer');  // Elemento para exibir o tempo
+
+        const countdown = setInterval(function() {
+            if (timeLeft <= 0) {
+                clearInterval(countdown);  // Para o timer quando o tempo chega a zero
+                timerDisplay.innerHTML = "Tempo esgotado!";
+            } else {
+                timerDisplay.innerHTML = timeLeft + " segundos restantes";
+                timeLeft--;
+            }
+        }, 1000);  // Atualiza a cada 1 segundo (1000 milissegundos)
+    </script>
+</body>
+</html>
