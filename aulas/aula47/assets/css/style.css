@@ -81,4 +81,16 @@ form button:hover
 {
     font-size: 42px;
     margin: 0px;
+    padding: 0px 50px;
+}
+#container-buttons
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.pausado
+{
+    color: red;
 }
