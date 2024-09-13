@@ -86,3 +86,9 @@ input:focus
 {
     width: 80px;
 }
+
+#tarefas
+{
+    margin: 0px;
+    padding: 0px;
+}

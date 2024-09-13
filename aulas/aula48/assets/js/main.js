@@ -2,33 +2,40 @@ const inputTarefa = document.querySelector( '#input-new-tarefa' )
 const buttonAddTarefa = document.querySelector( '#button-add-tarefa' )
 const tarefas = document.querySelector( '#tarefas' )
 
-buttonAddTarefa.addEventListener( 'click', function( event )
+// Detecta o click e retorna função
+document.addEventListener( 'click', function( event )
 {
     const click = event.target
-    
-    if( click.classList.contains( 'button' )) return verificaTarefa()
-    if( click.classList.contains( 'apagar' )) return apagaTarefa()
 
+    if( click.classList.contains( 'button' )) return criaTarefa( inputTarefa.value )
+    if( click.classList.contains( 'apagar' )) return apagaTarefa( click )
+            
 })
 
-function verificaTarefa()
+// Detecta a tecla pressionada e retorna função
+inputTarefa.addEventListener( 'keypress', function( event )
 {
-    const valorInput = inputTarefa.value
+    const tecla = event.key
 
-    if( !valorInput ) return
-    criaTarefa( valorInput )
-}
+    if( tecla === 'Enter' ) return criaTarefa( inputTarefa.value )
+})
 
+
+// verifica e cria a tarefa, eexecuta o limpa input e executa a função para criar o botão ao lado
 function criaTarefa( textTarefa )
 {
-    const li = criaLi()
-    const p = criaP()
-    p.innerHTML = textTarefa
-    tarefas.appendChild( li )
-    li.appendChild(p)
-
-    limpaInput()
-    criaButtonApagar( p )
+    if( textTarefa )
+    {
+        const li = criaLi()
+        const p = criaP()
+        p.innerHTML = textTarefa
+        tarefas.appendChild( li )
+        li.appendChild(p)
+        
+        limpaInput()
+        criaButtonApagar( li )
+        salvarTarefas() // Salva nodeList
+    }
 }
 
 function criaButtonApagar( li )
@@ -46,9 +53,10 @@ function limpaInput()
     inputTarefa.focus()
 }
 
-function apagaTarefa()
+function apagaTarefa( click )
 {
-
+    click.parentElement.remove()
+    salvarTarefas()
 }
 
 function criaLi()
@@ -67,9 +75,34 @@ function criaButton()
 {
     const button = document.createElement( 'button' )
     return button
+}    
+
+function salvarTarefas()
+{
+    const liTarefas = tarefas.querySelectorAll( 'li' )
+    const listaDeTarefas = []
+
+    for( let tarefa of liTarefas )
+    {
+        let tarefaTexto = tarefa.innerText
+        tarefaTexto = tarefaTexto.replace( 'apagar', '' ).trim()
+        listaDeTarefas.push( tarefaTexto )
+    }
+
+    const tarefasJSON = JSON.stringify( listaDeTarefas )
+    localStorage.setItem( 'tarefas', tarefasJSON )
 }
 
-inputTarefa.addEventListener( 'keypress', function(e)
+function adicionaTarefasSalvas()
 {
-    if( e.key === 'Enter' ) verificaTarefa()
-})
+    const tarefas = localStorage.getItem( 'tarefas' )
+    const listaDeTarefas = JSON.parse( tarefas )
+
+    for( let tarefa of listaDeTarefas )
+    {
+        criaTarefa( tarefa )
+    }
+
+    console.log( tarefas )
+}
+adicionaTarefasSalvas()
